@@ -1,7 +1,3 @@
-#
-# Replace rt61 with real module name and drivers/net/wireless
-# with required directory name.
-#
 # Conditional build:
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_without	smp		# don't build SMP module
@@ -33,8 +29,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Ralink RT61 802.11abg WLAN Driver.
 
 #%description -l pl
-
-# kernel subpackages.
 
 %package -n kernel-smp-net-rt61
 Summary:	Ralink RT61 802.11abg WLAN Driver (SMP)
@@ -138,4 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files firmware
 %defattr(644,root,root,755)
-%{_sysconfdir}/Wireless
+%dir %{_sysconfdir}/Wireless
+%dir %{_sysconfdir}/Wireless/RT61STA
+%{_sysconfdir}/Wireless/RT61STA/*.bin
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/Wireless/RT61STA/*.dat
