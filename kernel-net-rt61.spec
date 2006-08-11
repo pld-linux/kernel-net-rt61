@@ -136,3 +136,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/Wireless/RT61STA
 %{_sysconfdir}/Wireless/RT61STA/*.bin
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/Wireless/RT61STA/*.dat
+%doc BIG_FAT_WARNING CHANGELOG TESTING THANKS Module/README Module/ReleaseNote Module/*.txt
