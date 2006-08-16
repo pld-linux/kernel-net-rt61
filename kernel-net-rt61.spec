@@ -3,7 +3,7 @@
 %bcond_without	smp		# don't build SMP module
 %bcond_with	verbose		# verbose build (V=1)
 
-%define		_snap	2006081110
+%define		_snap	2006081604
 %define		_rel	1.%{_snap}.1
 Summary:	Ralink RT61 802.11abg WLAN Driver
 #Summary(pl):	-
@@ -13,7 +13,7 @@ Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL v2
 Group:		Base/Kernel
 Source0:	http://rt2x00.serialmonkey.com/rt61-cvs-daily.tar.gz
-# Source0-md5:	8c48c6c4f384a695c75528e32822382d
+# Source0-md5:	5df1b1811bf1be5afb3ca24affd52c90
 URL:		http://rt2x00.serialmonkey.com/
 # NOTE: might also work with 2.4
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.14}
