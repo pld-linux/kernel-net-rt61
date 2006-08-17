@@ -83,6 +83,7 @@ for cfg in %{?with_dist_kernel:%{?with_smp:smp} up}%{!?with_dist_kernel:nondist}
 		M=$PWD O=$PWD/o \
 		%{?with_verbose:V=1}
 	%{__make} -C %{_kernelsrcdir} modules \
+		%{?debug:EXTRA_CFLAGS='-DAGGREGATION_SUPPORT -DWMM_SUPPORT -DRT61_DBG'} \
 		CC="%{__cc}" CPP="%{__cpp}" \
 		SYSSRC=%{_kernelsrcdir} \
 		SYSOUT=$PWD/o \
