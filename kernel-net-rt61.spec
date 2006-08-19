@@ -1,3 +1,5 @@
+# XXX: move firmware to /lib/firmware?
+#
 # Conditional build:
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_without	smp		# don't build SMP module
@@ -6,7 +8,7 @@
 %define		_snap	2006081604
 %define		_rel	1.%{_snap}.1
 Summary:	Ralink RT61 802.11abg WLAN Driver
-#Summary(pl):	-
+Summary(pl):	Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61
 Name:		kernel-net-rt61
 Version:	1.1.0
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -28,11 +30,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Ralink RT61 802.11abg WLAN Driver.
 
-#%description -l pl
+%description -l pl
+Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61.
 
 %package -n kernel-smp-net-rt61
 Summary:	Ralink RT61 802.11abg WLAN Driver (SMP)
-#Summary(pl):	
+Summary(pl):	Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61 (SMP)
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
@@ -45,16 +48,22 @@ Requires:	%{name}-firmware
 %description -n kernel-smp-net-rt61
 Ralink RT61 802.11abg WLAN Driver (SMP).
 
-#%description -n kernel-smp-net-rt61 -l pl
+%description -n kernel-smp-net-rt61 -l pl
+Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61 (SMP).
 
 %package firmware
 Summary:	Firmware for Ralink RT61 802.11abg WLAN cards
+Summary(pl):	Firmware dla kart WLAN 802.11abg Ralink RT61
 Release:	%{_rel}
 Group:		Base/Kernel
-# XXX: make a circular dependency?
 
 %description firmware
-Firmware for Ralink RT61 802.11abg WLAN cards: rt2561.bin, rt2561s.bin, rt2661.bin.
+Firmware for Ralink RT61 802.11abg WLAN cards: rt2561.bin,
+rt2561s.bin, rt2661.bin.
+
+%description firmware -l pl
+Firmware dla kart WLAN 802.11abg Ralink RT61: rt2561.bin, rt2561s.bin,
+rt2661.bin.
 
 %prep
 %setup -q -n rt61-cvs-%{_snap}
@@ -133,8 +142,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files firmware
 %defattr(644,root,root,755)
+%doc BIG_FAT_WARNING CHANGELOG TESTING THANKS Module/README Module/ReleaseNote Module/*.txt
 %dir %{_sysconfdir}/Wireless
 %dir %{_sysconfdir}/Wireless/RT61STA
 %{_sysconfdir}/Wireless/RT61STA/*.bin
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/Wireless/RT61STA/*.dat
-%doc BIG_FAT_WARNING CHANGELOG TESTING THANKS Module/README Module/ReleaseNote Module/*.txt
