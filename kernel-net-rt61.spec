@@ -8,7 +8,7 @@
 %define		_snap	2006081604
 %define		_rel	1.%{_snap}.1
 Summary:	Ralink RT61 802.11abg WLAN Driver
-Summary(pl):	Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61
+Summary(pl.UTF-8):   Sterownik WLAN 802.11abg dla urzÄ…dzeÅ„ Ralink RT61
 Name:		kernel-net-rt61
 Version:	1.1.0
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -30,12 +30,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Ralink RT61 802.11abg WLAN Driver.
 
-%description -l pl
-Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61.
+%description -l pl.UTF-8
+Sterownik WLAN 802.11abg dla urzÄ…dzeÅ„ Ralink RT61.
 
 %package -n kernel-smp-net-rt61
 Summary:	Ralink RT61 802.11abg WLAN Driver (SMP)
-Summary(pl):	Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61 (SMP)
+Summary(pl.UTF-8):   Sterownik WLAN 802.11abg dla urzÄ…dzeÅ„ Ralink RT61 (SMP)
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
@@ -48,12 +48,12 @@ Requires:	%{name}-firmware
 %description -n kernel-smp-net-rt61
 Ralink RT61 802.11abg WLAN Driver (SMP).
 
-%description -n kernel-smp-net-rt61 -l pl
-Sterownik WLAN 802.11abg dla urz±dzeñ Ralink RT61 (SMP).
+%description -n kernel-smp-net-rt61 -l pl.UTF-8
+Sterownik WLAN 802.11abg dla urzÄ…dzeÅ„ Ralink RT61 (SMP).
 
 %package firmware
 Summary:	Firmware for Ralink RT61 802.11abg WLAN cards
-Summary(pl):	Firmware dla kart WLAN 802.11abg Ralink RT61
+Summary(pl.UTF-8):   Firmware dla kart WLAN 802.11abg Ralink RT61
 Release:	%{_rel}
 Group:		Base/Kernel
 
@@ -61,7 +61,7 @@ Group:		Base/Kernel
 Firmware for Ralink RT61 802.11abg WLAN cards: rt2561.bin,
 rt2561s.bin, rt2661.bin.
 
-%description firmware -l pl
+%description firmware -l pl.UTF-8
 Firmware dla kart WLAN 802.11abg Ralink RT61: rt2561.bin, rt2561s.bin,
 rt2661.bin.
 
