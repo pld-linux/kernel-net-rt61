@@ -17,8 +17,8 @@ Source0:	http://rt2x00.serialmonkey.com/rt61-cvs-daily.tar.gz
 # Source0-md5:	71b6eede184f138fc5e6bea11c5369fc
 URL:		http://rt2x00.serialmonkey.com/
 # NOTE: might also work with 2.4
-%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.14}
-BuildRequires:	rpmbuild(macros) >= 1.308
+%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.20.2}
+BuildRequires:	rpmbuild(macros) >= 1.379
 %if %{with dist_kernel}
 %requires_releq_kernel
 Requires(postun):	%releq_kernel
