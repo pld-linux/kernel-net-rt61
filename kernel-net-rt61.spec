@@ -4,7 +4,7 @@
 %bcond_with	verbose		# verbose build (V=1)
 
 %define		_snap	2007100609
-%define		_rel	2.%{_snap}.1
+%define		_rel	2.%{_snap}.2
 Summary:	Ralink RT61 802.11abg WLAN Driver
 Summary(pl.UTF-8):	Sterownik WLAN 802.11abg dla urządzeń Ralink RT61
 Name:		kernel%{_alt_kernel}-net-rt61
