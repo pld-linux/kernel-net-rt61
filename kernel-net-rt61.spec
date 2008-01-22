@@ -3,16 +3,18 @@
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_with	verbose		# verbose build (V=1)
 
-%define		_snap	2007122707
-%define		_rel	2.%{_snap}.1
+%define		subver	2007122707
+%define		prel	2.%{subver}.%{rel}
+
+%define		rel		2
 Summary:	Ralink RT61 802.11abg WLAN Driver
 Summary(pl.UTF-8):	Sterownik WLAN 802.11abg dla urządzeń Ralink RT61
 Name:		kernel%{_alt_kernel}-net-rt61
 Version:	1.1.0
-Release:	%{_rel}@%{_kernel_ver_str}
+Release:	%{prel}@%{_kernel_ver_str}
 License:	GPL v2
 Group:		Base/Kernel
-#Source0:	http://rt2x00.serialmonkey.com/rt61-%{version}-%{_snap}.tar.gz
+#Source0:	http://rt2x00.serialmonkey.com/rt61-%{version}-%{subver}.tar.gz
 Source0:	http://rt2x00.serialmonkey.com/rt61-cvs-daily.tar.gz
 # Source0-md5:	af5b1d4bfdc6297076fdd2490437d937
 URL:		http://rt2x00.serialmonkey.com/
@@ -37,7 +39,7 @@ Sterownik WLAN 802.11abg dla urządzeń Ralink RT61.
 %package firmware
 Summary:	Firmware for Ralink RT61 802.11abg WLAN cards
 Summary(pl.UTF-8):	Firmware dla kart WLAN 802.11abg Ralink RT61
-Release:	%{_rel}
+Release:	%{prel}
 Group:		Base/Kernel
 
 %description firmware
@@ -49,7 +51,7 @@ Firmware dla kart WLAN 802.11abg Ralink RT61: rt2561.bin, rt2561s.bin,
 rt2661.bin.
 
 %prep
-%setup -q -n rt61-cvs-%{_snap}
+%setup -q -n rt61-cvs-%{subver}
 
 %build
 cd Module
