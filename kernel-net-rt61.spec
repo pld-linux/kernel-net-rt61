@@ -4,7 +4,7 @@
 %bcond_with	verbose		# verbose build (V=1)
 
 %define		subver	2007122707
-%define		rel	3
+%define		rel	4
 %define		prel	2.%{subver}.%{rel}
 
 Summary:	Ralink RT61 802.11abg WLAN Driver
